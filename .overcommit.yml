@@ -1,0 +1,66 @@
+gemfile: Gemfile
+verify_signatures: false
+
+PreCommit:
+  BundleCheck:
+    enabled: true
+
+  BundleAudit:
+    enabled: true
+
+  FixMe:
+    enabled: true
+    keywords: ["FIXME"]
+    exclude:
+      - .overcommit.yml
+
+  LineEndings:
+    enabled: true
+
+  LocalPathsInGemfile:
+    enabled: true
+
+  RailsSchemaUpToDate:
+    enabled: true
+
+  RailsBestPractices:
+    enabled: true
+
+  Fasterer:
+    enabled: true
+
+  Flay:
+    enabled: true
+
+  RuboCop:
+    enabled: true
+    on_warn: fail
+
+  Reek:
+    enabled: true
+
+  EsLint:
+    enabled: true
+    required_executable: './node_modules/.bin/eslint'
+    include:
+      - frontend/**/*.js
+      - frontend/**/*.jsx
+
+  Stylelint:
+    enabled: true
+    required_executable: './node_modules/.bin/stylelint'
+    include:
+      - frontend/**/*.css
+      - frontend/**/*.scss
+
+PrePush:
+  Brakeman:
+    enabled: true
+
+  RSpec:
+    enabled: true
+
+  CustomScript:
+    enabled: true
+    required_executable: './bin/validate_factories'
+    description: 'Validate model factories'

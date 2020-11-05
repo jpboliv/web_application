@@ -1,0 +1,91 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  # Enable new cops by default, we can turn off the ones we don't want overriding below.
+  NewCops: enable
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 2.6
+  Include:
+    - '**/Rakefile'
+    - '**/*.rake'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/*'
+    - 'Gemfile'
+    - 'config/boot.rb'
+    - 'db/schema.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+
+Metrics/ClassLength:
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Max: 25
+  Exclude:
+    - 'config/**/*'
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - 'spec/**/*'
+
+Rails:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: true
+
+Style/GuardClause:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
