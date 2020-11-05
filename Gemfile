@@ -10,6 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'webpacker', '~> 5.2', '>= 5.2.1'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', '~> 1.2020', '>= 1.2020.1'
+gem 'sidekiq', '~> 6.0', '>= 6.0.6'
 
 # Rails-React integration
 gem 'mini_racer', platforms: :ruby
@@ -38,13 +39,20 @@ group :development do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rubocop-performance'
-  gem 'reek', '~> 6.0', '>= 6.0.1', require: false
-  gem 'brakeman',                   require: false
-  gem 'bundler-audit',              require: false
-  gem 'rails_best_practices',       require: false
-  gem 'fasterer',                   require: false
-  gem 'flay',                       require: false
-  gem 'overcommit',                 require: false
+  gem 'reek', '~> 6.0', '>= 6.0.1',   require: false
+  gem 'brakeman',                     require: false
+  gem 'bundler-audit',                require: false
+  gem 'rails_best_practices',         require: false
+  gem 'fasterer',                     require: false
+  gem 'flay',                         require: false
+  gem 'overcommit',                   require: false
+  gem 'capistrano',                   require: false
+  gem 'capistrano-bundler',           require: false
+  gem 'capistrano-rails',             require: false
+  gem 'capistrano-rvm',               require: false
+  gem 'capistrano3-puma',             require: false
+  gem 'capistrano-sidekiq',           git: 'https://github.com/rwojnarowski/capistrano-sidekiq.git',
+                                      require: false
 end
 
 group :test do
