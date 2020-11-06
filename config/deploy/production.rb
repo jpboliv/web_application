@@ -61,4 +61,4 @@
 #   }
 
 set :branch, ENV.fetch('BRANCH', :main)
-server "ec2-15-188-26-224.eu-west-3.compute.amazonaws.com", user: "deploy"
+server "ec2-35-180-164-255.eu-west-3.compute.amazonaws.com", user: "deploy"
