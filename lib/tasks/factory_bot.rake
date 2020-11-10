@@ -1,3 +1,5 @@
+return unless Rails.env.development? || Rails.env.test?
+
 require 'English'
 require 'factory_bot_rails'
 
