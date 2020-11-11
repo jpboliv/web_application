@@ -7,6 +7,7 @@ set :deploy_to, "/home/deploy/apps"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
 require_relative 'deploy/plugins/capistrano_rails'
+require_relative 'deploy/plugins/capistrano_sidekiq'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
