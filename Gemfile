@@ -51,8 +51,7 @@ group :development do
   gem 'capistrano-rails',             require: false
   gem 'capistrano-rvm',               require: false
   gem 'capistrano3-puma',             require: false
-  gem 'capistrano-sidekiq',           git: 'https://github.com/rwojnarowski/capistrano-sidekiq.git',
-                                      require: false
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq', tag: 'v2.0.0.beta5', require: false
 end
 
 group :test do

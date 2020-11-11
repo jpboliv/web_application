@@ -1,12 +1,21 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, "my_app_name"
+set :application, "web_application"
 set :repo_url, "git://github.com/jpboliv/web_application.git"
 set :deploy_to, "/home/deploy/apps"
+set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
+set :user, 'deploy'
+set :migration_role, :app
+set :keep_releases, 5
+set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w[~/.ssh/id_rsa.pub] }
+set :default_env, { 'NODE_ENV': 'production' }
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
+require_relative 'deploy/plugins/capistrano_bundler'
+require_relative 'deploy/plugins/capistrano_puma'
 require_relative 'deploy/plugins/capistrano_rails'
+require_relative 'deploy/plugins/capistrano_rvm'
 require_relative 'deploy/plugins/capistrano_sidekiq'
 
 # Default branch is :master
