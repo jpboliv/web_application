@@ -1,10 +1,10 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, "web_application"
 set :repo_url, "git://github.com/jpboliv/web_application.git"
 set :deploy_to, "/home/deploy/apps"
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
+set :deploy_to, "/opt/apps/#{fetch(:full_app_name)}"
 set :user, 'deploy'
 set :migration_role, :app
 set :keep_releases, 5
