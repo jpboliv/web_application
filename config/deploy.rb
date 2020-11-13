@@ -2,6 +2,7 @@
 lock "~> 3.14.1"
 
 set :repo_url, "git://github.com/jpboliv/web_application.git"
+set :application, "web_application"
 set :deploy_to, "/home/deploy/apps"
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :deploy_to, "/opt/apps/#{fetch(:full_app_name)}"
